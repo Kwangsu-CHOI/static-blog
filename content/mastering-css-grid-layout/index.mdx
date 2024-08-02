@@ -1,0 +1,132 @@
+---
+title: "What is CSS Grid Layout: A Comprehensive Guide"
+description: "It makes your design better (prettier)❤️❤️"
+image: "../../public/blogs/kelly-sikkema--1_RZL8BGBM-unsplash.jpg"
+publishedAt: "2022-11-12"
+updatedAt: "2022-11-12"
+author: "Kwangsu CHOI"
+isPublished: true
+tags:
+  - web development
+---
+
+CSS Grid Layout is a powerful tool for creating complex and responsive layouts with ease. Unlike its predecessor, Flexbox, Grid is designed for two-dimensional layouts, offering unparalleled control over positioning and sizing elements.
+
+## Understanding the Basics
+
+To begin, let's define some key terms:
+
+- Grid container: The parent element that establishes the grid.
+- Grid item: The child elements within the grid container.
+- Grid track: The space between two grid lines.
+- Grid line: The dividing lines that create the grid structure.
+- Grid cell: The intersection of a row and a column.
+
+### Creating a Basic Grid
+
+To create a simple grid, you'll need to define the grid container and specify the number of columns and rows:
+
+```css
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+	grid-template-rows: 100px 200px; /* Create 2 rows with fixed heights */
+}
+```
+
+### Placing Items on the Grid
+
+You can position grid items using various methods:
+
+- Implicit placement: Items are placed sequentially, starting from the top left corner.
+- Explicit placement: Use <code>grid-column</code> and <code>grid-row</code> properties to specify the grid area for an item.
+- Grid areas: Define named areas and assign items to them using the grid-area property.
+
+```css
+.item1 {
+  grid-column: 1 / 3; /* Span two columns */
+  grid-row: 1 / 3; /* Span two rows */
+}
+.item2 {
+grid-area: header; /_ Assumes a named grid area 'header' is defined _/
+}
+```
+
+### Grid Template Areas
+
+Grid template areas provide a visual way to define the grid structure:
+
+```css
+.container {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: 100px auto 150px;
+	grid-template-areas:
+		"header header header"
+		"sidebar content main"
+		"footer footer footer";
+}
+
+.header {
+	grid-area: header;
+}
+
+.sidebar {
+	grid-area: sidebar;
+}
+
+/* ... and so on */
+```
+
+### Gap and Alignment
+
+To add spacing between grid items, use the <code>gap</code> property:
+
+```css
+.container {
+	gap: 20px;
+}
+```
+
+To control the alignment of items within grid cells, use properties like:
+
+<code>justify-content</code>: Aligns items along the main axis (columns by
+default).
+<code>align-items</code>: Aligns items along the cross axis (rows by default).
+<code>place-items</code>: A shorthand for <code>justify-content</code> and <code>
+	align-items
+</code>.
+
+```css
+.container {
+	justify-content: center;
+	align-items: center;
+}
+```
+
+### Responsive Grids
+
+CSS Grid is highly responsive. You can use media queries to adjust grid layouts based on screen size:
+
+```css
+@media (max-width: 768px) {
+	.container {
+		grid-template-columns: 1fr;
+	}
+}
+```
+
+---
+
+## Additional Tips
+
+- <mark>Use grid templates effectively</mark>: Define clear and consistent grid
+  structures.
+- <mark>Leverage grid gaps</mark>: Create visually appealing layouts with proper
+  spacing.
+- <mark>Experiment with alignments</mark>: Explore different alignment options
+  to achieve desired effects.
+- <mark>Combine Grid with Flexbox</mark>: For complex layouts, consider using
+  both Grid and Flexbox together.
+
+> By mastering these fundamentals, you'll be well-equipped to create sophisticated and responsive layouts using CSS Grid.
