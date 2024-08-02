@@ -53,6 +53,7 @@ export default function ContactForm() {
 				className="outline-none border-0 p-0 mx-2 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray 
         focus:border-gray bg-transparent"
 				name="user_name"
+				required
 			/>
 			and I want to discuss our project with you. You can email me at
 			<input
@@ -62,6 +63,7 @@ export default function ContactForm() {
 				className="outline-none border-0 p-0 mx-2 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray 
         focus:border-gray bg-transparent"
 				name="user_email"
+				required
 			/>
 			or reach out to me on
 			<input
@@ -71,6 +73,7 @@ export default function ContactForm() {
 				className="outline-none border-0 p-0 mx-2 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray 
         focus:border-gray bg-transparent"
 				name="user_phone"
+				required
 			/>
 			Here are some details: <br />
 			<textarea
@@ -80,24 +83,29 @@ export default function ContactForm() {
 				className="w-full outline-none border-0 p-0 mx-0 focus:ring-0  placeholder:text-lg border-b border-gray 
         focus:border-gray bg-transparent"
 				name="user_message"
+				required
 			/>
-			<button
-				type="submit"
-				value="send"
-				className="mt-8 font-medium inline-block capitalize text-lg sm:text-xl py-2 sm:py-3 px-6 sm:px-8 border-2 border-solid border-dark dark:border-light rounded cursor-pointer"
-			>
-				Send
-			</button>
-			{success && (
-				<span className="text-green-500 font-semibold">
-					Your message has been successfully sent!
-				</span>
-			)}
-			{error && (
-				<span className="text-red-500 font-semibold">
-					Something went wrong!!!
-				</span>
-			)}
+			<div className="flex flex-col">
+				<button
+					type="submit"
+					value="send"
+					className="mt-8 font-medium inline-block capitalize text-lg sm:text-xl py-2 sm:py-3 px-6 sm:px-8 border-2 border-solid border-dark dark:border-light rounded cursor-pointer w-36"
+				>
+					Send
+				</button>
+				<div className="mt-5">
+					{success && (
+						<span className="text-green-500 font-semibold">
+							Your message has been successfully sent!
+						</span>
+					)}
+					{error && (
+						<span className="text-red-500 font-semibold">
+							Something went wrong!!!
+						</span>
+					)}
+				</div>
+			</div>
 		</form>
 	);
 }

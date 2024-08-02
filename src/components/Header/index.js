@@ -23,6 +23,7 @@ const Header = () => {
 	const toggle = () => {
 		setClick(!click);
 	};
+
 	return (
 		<header className="w-full p-4  px-5 sm:px-10 flex items-center justify-between">
 			<Logo />
